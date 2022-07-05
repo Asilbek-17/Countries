@@ -1,9 +1,11 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
+:root {
+    --header-bg-color: #fff;
+    --text-color: #111517;
+    --main-bg-color: #fafafa;
+    --item-bg-color: #fff;
+    --input-color: #848484;
+    --search-color: #fff;
+}
 
 @font-face {
     font-family: "Nunito Sans";
@@ -53,11 +55,21 @@ body {
     padding: 0 20px; 
 }
 
+.theme-dark {
+    --header-bg-color: #2B3844;
+    --text-color: #fff;
+    --main-bg-color: #202C36;
+    --item-bg-color: #2B3844;
+    --input-color: #fff;
+    --search-color: #2B3844;
+}
+
 header {
-    background: #FFFFFF;
+    background-color: var(--header-bg-color);
     -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
     padding: 23px 0;
+    transition: background-color 0.3 ease, 0.3 ease;
 }
 
 .head-box {
@@ -69,12 +81,16 @@ header {
             justify-content: space-between;
 }
 
+.head-link {
+    color: var(--text-color);
+}
+
 .head-btn {
     width: 110px;
     font-weight: 300;
     font-size: 16px;
     line-height: 22px;
-    color: #111517; 
+    color: var(--text-color); 
     background: transparent;
     background-image: url("../images/Path.svg");
     background-position: calc(50% - 45px);
@@ -84,9 +100,14 @@ header {
     cursor: pointer;
 }
 
+.theme-dark .head-btn {
+    background-image: url("../images/moon-dark.svg");
+}
+
 .hero {
-    background-color: #fafafa;
+    background-color: var(--main-bg-color);
     padding: 48px 0;
+    transition: background-color 0.3 ease, 0.3 ease;
 }
 
 .hero-form {
@@ -102,6 +123,7 @@ header {
 .hero-inp {
     width: 480px;
     background-image: url("../images/icon-search-black.svg");
+    background-color: var(--search-color);
     background-position: calc(50% - 200px);
     background-repeat: no-repeat;
     padding: 18px 74px;
@@ -111,47 +133,51 @@ header {
     border: none;
 }
 
+.theme-dark .hero-inp {
+    background-image: url("../images/search-dark.svg");
+}
+
 .hero-inp::-webkit-input-placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: #848484;
+    color: var(--input-color);
 }
 
 .hero-inp::-moz-placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: #848484;
+    color: var(--input-color);
 }
 
 .hero-inp:-ms-input-placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: #848484;
+    color: var(--input-color);
 }
 
 .hero-inp::-ms-input-placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: #848484;
+    color: var(--input-color);
 }
 
 .hero-inp::placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: #848484;
+    color: var(--input-color);
 }
 
 .hero-slct {
     font-weight: 300;
     font-size: 14px;
     line-height: 20px;
-    color: #848484;
-    background: #FFFFFF;
+    color: var(--input-color);
+    background: var(--item-bg-color);
     -webkit-box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
             box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
     border-radius: 5px;
@@ -163,7 +189,7 @@ header {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: #111517;
+    color: var(--text-color);
 }
 
 .hero-list {
@@ -179,7 +205,7 @@ header {
 .hero-item {
     width: 267px;
     list-style: none;
-    background: #FFFFFF;
+    background: var(--item-bg-color);
     -webkit-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
             box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
     border-radius: 5px;
@@ -216,7 +242,7 @@ header {
     font-weight: 800;
     font-size: 18px;
     line-height: 26px;
-    color: #111517;
+    color: var(--text-color);
     margin-top: 24px;
     margin-bottom: 16px;
     margin-left: 24px;
@@ -226,7 +252,7 @@ header {
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    color: #111517;
+    color: var(--text-color);
     margin-left: 24px;
     margin-bottom: 8px;
 }
@@ -235,5 +261,5 @@ header {
     font-weight: 300;
     font-size: 14px;
     line-height: 16px;
-    color: #111517;
+    color: var(--text-color);
 }
